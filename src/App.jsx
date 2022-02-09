@@ -1,27 +1,18 @@
-import { Typography } from '@mui/material';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import './App.css';
-import DenseAppBar from './components/navbar';
-
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Blog from './Pages/Blog';
+import HomePage from './Pages/HomePage';
 function App() {
   return (
-    <div className="App">
-      <Box sx={{ flexGrow: 1 }}>
-      <Grid container>
-        <Grid item xs={2}/>
-          <Grid item xs={8} marginTop={5}>
-              <Typography variant="h4" >
-                DreamerK's Blog
-              </Typography>
-              <DenseAppBar/>
-              <div className="line-1"/>
-          </Grid>
-        <Grid item xs={2}/>
-      </Grid>
-    </Box>
-      
+    <div>
+    <Header/>
+    <Routes>
+      <Route path="/" element = {<HomePage />}/>
+      <Route path="/blog" element = {<Blog />}/>
+
+    </Routes>
     </div>
+  
   );
 }
 

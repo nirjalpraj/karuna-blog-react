@@ -1,9 +1,11 @@
+
 import { Grid } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function DenseAppBar() {
   return (
@@ -11,21 +13,19 @@ export default function DenseAppBar() {
       <AppBar position="static" color="transparent" variation="outlined" elevation="0" >
         <Toolbar variant="dense" >
             <Grid container direction="row" spacing={4}>   
-                <Grid item>
-                    <Typography component="div" variant="h5">
-                        Blog
-                    </Typography>
-                </Grid>
 
                 <Grid item>
-                    <Typography component="div" variant="h5">
-                        About
-                    </Typography>
+                    <Link to={'/blog'}>
+                        <Typography component="div" variant="h5">
+                            Blogs
+                        </Typography>
+                    </Link>    
                 </Grid>
 
+    
                 <Grid item xs={7}/>
                 <Grid item>
-                    <Typography variant="h5">
+                <Typography variant="h5">
                         Twitter
                     </Typography>
                 </Grid>
